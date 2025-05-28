@@ -1,0 +1,178 @@
+version: '3.8'
+
+services:
+  # SonarQube Database
+  sonarqube-db:
+    image: postgres:13
+    container_name: sonarqube-postgres
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+    volumes:
+      - sonarqube_db_data:/var/lib/postgresql/data
+    networks:
+      - security-lab
+
+  # SonarQube Server
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube-server
+    depends_on:
+      - sonarqube-db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://sonarqube-db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+      - ./code:/opt/sonarqube/src # This volume is for SonarQube to find source code for analysis if needed directly, but scanning is done by sonar-scanner
+    networks:
+      - security-lab
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  # DVWA (Damn Vulnerable Web Application)
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa-app
+    ports:
+      - "8080:80"
+    environment:
+      - MYSQL_HOSTNAME=dvwa-db
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_USERNAME=dvwa
+      - MYSQL_PASSWORD=password
+    depends_on:
+      - dvwa-db
+    volumes:
+      - ./dvwa-source:/var/www/html # Mounts local dvwa-source for persistence/modification if needed
+    networks:
+      - security-lab
+
+  # DVWA Database
+  dvwa-db:
+    image: mysql:5.7
+    container_name: dvwa-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: dvwa
+      MYSQL_USER: dvwa
+      MYSQL_PASSWORD: password
+    volumes:
+      - dvwa_db_data:/var/lib/mysql
+    networks:
+      - security-lab
+
+  # Sample Vulnerable Web App (PHP)
+  sample-app:
+    build:
+      context: ./sample-app
+      dockerfile: Dockerfile
+    container_name: sample-vulnerable-app
+    ports:
+      - "3000:80"
+    volumes:
+      - ./sample-app:/var/www/html # Mounts the local sample-app directory
+    networks:
+      - security-lab
+
+  # Semgrep Scanner Container
+  semgrep-scanner:
+    image: returntocorp/semgrep
+    container_name: semgrep-scanner
+    volumes:
+      - ./code:/src # Mounts the ./code directory (where code-collector clones repos) to /src in the container
+      - ./reports:/reports # Mounts local ./reports to /reports in container for output
+    networks:
+      - security-lab
+    command: >
+      sh -c "
+        echo 'Semgrep Scanner Ready. Run scans using docker exec.' &&
+        echo 'Example: docker exec semgrep-scanner semgrep --config=auto /src/DVWA --json --output=/reports/semgrep-dvwa-auto.json' &&
+        tail -f /dev/null
+      "
+
+  # SonarQube Scanner Container
+  sonar-scanner:
+    image: sonarsource/sonar-scanner-cli
+    container_name: sonar-scanner
+    volumes:
+      - ./code:/usr/src # Mounts the ./code directory to /usr/src for the scanner
+      - ./sonar-scanner.properties:/opt/sonar-scanner/conf/sonar-scanner.properties # Mounts sonar-scanner properties
+    networks:
+      - security-lab
+    depends_on:
+      - sonarqube
+    command: >
+      sh -c "
+        echo 'SonarQube Scanner Ready. Waiting for SonarQube to be available...' &&
+        sleep 30 && # Initial wait for SonarQube
+        echo 'Run scans with: docker exec sonar-scanner sonar-scanner -Dsonar.projectKey=... -Dsonar.sources=...' &&
+        tail -f /dev/null
+      "
+
+  # Code Collector Service (to download and prepare source code)
+  code-collector:
+    image: alpine/git
+    container_name: code-collector
+    volumes:
+      - ./code:/workspace # Mounts local ./code directory to /workspace in the container
+    working_dir: /workspace
+    entrypoint: /bin/sh # Explicitly set sh as the entrypoint
+    command: # Pass the script as an argument to sh -c
+      - -c
+      - | # Use | for a multi-line string that preserves newlines for the script
+        echo 'Code Collector: Starting source code cloning...'
+        
+        echo 'Cloning DVWA source code into ./DVWA...'
+        if [ ! -d 'DVWA' ]; then
+          git clone https://github.com/digininja/DVWA.git
+          if [ $? -eq 0 ]; then echo 'DVWA cloned successfully.'; else echo 'Failed to clone DVWA.'; fi
+        else
+          echo 'DVWA directory already exists. Skipping clone.'
+        fi
+        
+        echo 'Cloning NodeGoat into ./NodeGoat...'
+        if [ ! -d 'NodeGoat' ]; then
+          git clone https://github.com/OWASP/NodeGoat.git
+          if [ $? -eq 0 ]; then echo 'NodeGoat cloned successfully.'; else echo 'Failed to clone NodeGoat.'; fi
+        else
+          echo 'NodeGoat directory already exists. Skipping clone.'
+        fi
+        
+        echo 'Cloning WebGoat into ./WebGoat...'
+        if [ ! -d 'WebGoat' ]; then
+          git clone https://github.com/WebGoat/WebGoat.git
+          if [ $? -eq 0 ]; then echo 'WebGoat cloned successfully.'; else echo 'Failed to clone WebGoat.'; fi
+        else
+          echo 'WebGoat directory already exists. Skipping clone.'
+        fi
+        
+        echo 'Source code collection process completed!'
+        echo 'Available code in ./code/ (inside container /workspace):'
+        ls -la
+        
+        echo 'Code collector will keep running to hold the container. Use "docker logs code-collector" to see clone status and "docker exec -it code-collector sh" to access its shell.'
+        tail -f /dev/null
+
+networks:
+  security-lab:
+    driver: bridge
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_db_data:
+  dvwa_db_data:
