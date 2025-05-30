@@ -1,0 +1,386 @@
+{
+  "version": "1.121.0",
+  "results": [
+    {
+      "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "path": "/src/NodeGoat/app/routes/contributions.js",
+      "start": { "line": 32, "col": 24, "offset": 965 },
+      "end": { "line": 32, "col": 45, "offset": 986 },
+      "extra": {
+        "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+        "metadata": {
+          "interfile": true,
+          "confidence": "HIGH",
+          "owasp": ["A03:2021 - Injection"],
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "references": [
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+            "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+            "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+            "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+          ],
+          "category": "security",
+          "technology": ["node.js", "Express", "Next.js"],
+          "subcategory": ["vuln"],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+          "shortlink": "https://sg.run/96Yk"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "path": "/src/NodeGoat/app/routes/contributions.js",
+      "start": { "line": 33, "col": 26, "offset": 1014 },
+      "end": { "line": 33, "col": 49, "offset": 1037 },
+      "extra": {
+        "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+        "metadata": {
+          "interfile": true,
+          "confidence": "HIGH",
+          "owasp": ["A03:2021 - Injection"],
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "references": [
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+            "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+            "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+            "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+          ],
+          "category": "security",
+          "technology": ["node.js", "Express", "Next.js"],
+          "subcategory": ["vuln"],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+          "shortlink": "https://sg.run/96Yk"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+      "path": "/src/NodeGoat/app/routes/contributions.js",
+      "start": { "line": 34, "col": 22, "offset": 1061 },
+      "end": { "line": 34, "col": 41, "offset": 1080 },
+      "extra": {
+        "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+        "metadata": {
+          "interfile": true,
+          "confidence": "HIGH",
+          "owasp": ["A03:2021 - Injection"],
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "references": [
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+            "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+            "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+            "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+          ],
+          "category": "security",
+          "technology": ["node.js", "Express", "Next.js"],
+          "subcategory": ["vuln"],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+          "shortlink": "https://sg.run/96Yk"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-open-redirect.express-open-redirect",
+      "path": "/src/NodeGoat/app/routes/index.js",
+      "start": { "line": 72, "col": 29, "offset": 2942 },
+      "end": { "line": 72, "col": 42, "offset": 2955 },
+      "extra": {
+        "message": "The application redirects to a URL specified by user-supplied input `req` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.",
+        "metadata": {
+          "technology": ["express"],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html"
+          ],
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ],
+          "category": "security",
+          "owasp": ["A01:2021 - Broken Access Control"],
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Open Redirect"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-open-redirect.express-open-redirect",
+          "shortlink": "https://sg.run/EpoP"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Don’t use the default session cookie name Using the default session cookie name can open your app to attacks. The security issue posed is similar to X-Powered-By: a potential attacker can use it to fingerprint the server and target attacks accordingly.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+          "shortlink": "https://sg.run/1Z5x"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Default session middleware settings: `domain` not set. It indicates the domain of the cookie; use it to compare against the domain of the server in which the URL is being requested. If they match, then check the path attribute next.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+          "shortlink": "https://sg.run/rd41"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Default session middleware settings: `expires` not set. Use it to set expiration date for persistent cookies.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+          "shortlink": "https://sg.run/N4eG"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Default session middleware settings: `httpOnly` not set. It ensures the cookie is sent only over HTTP(S), not client JavaScript, helping to protect against cross-site scripting attacks.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+          "shortlink": "https://sg.run/ydBO"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Default session middleware settings: `path` not set. It indicates the path of the cookie; use it to compare against the request path. If this and domain match, then send the cookie in the request.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+          "shortlink": "https://sg.run/b7pd"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+      "path": "/src/NodeGoat/server.js",
+      "start": { "line": 78, "col": 13, "offset": 2914 },
+      "end": { "line": 102, "col": 7, "offset": 3540 },
+      "extra": {
+        "message": "Default session middleware settings: `secure` not set. It ensures the browser only sends the cookie over HTTPS.",
+        "metadata": {
+          "cwe": ["CWE-522: Insufficiently Protected Credentials"],
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+          "category": "security",
+          "technology": ["express"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "references": ["https://owasp.org/Top10/A04_2021-Insecure_Design"],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cryptographic Issues"],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+          "shortlink": "https://sg.run/9oKz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "/src/NodeGoat/Gruntfile.js",
+      "/src/NodeGoat/app/assets/js/chart/chart-data-morris.js",
+      "/src/NodeGoat/app/assets/js/tour/redirects-steps.js",
+      "/src/NodeGoat/app/data/allocations-dao.js",
+      "/src/NodeGoat/app/data/benefits-dao.js",
+      "/src/NodeGoat/app/data/contributions-dao.js",
+      "/src/NodeGoat/app/data/memos-dao.js",
+      "/src/NodeGoat/app/data/profile-dao.js",
+      "/src/NodeGoat/app/data/research-dao.js",
+      "/src/NodeGoat/app/data/user-dao.js",
+      "/src/NodeGoat/app/routes/allocations.js",
+      "/src/NodeGoat/app/routes/benefits.js",
+      "/src/NodeGoat/app/routes/contributions.js",
+      "/src/NodeGoat/app/routes/error.js",
+      "/src/NodeGoat/app/routes/index.js",
+      "/src/NodeGoat/app/routes/memos.js",
+      "/src/NodeGoat/app/routes/profile.js",
+      "/src/NodeGoat/app/routes/research.js",
+      "/src/NodeGoat/app/routes/session.js",
+      "/src/NodeGoat/app/routes/tutorial.js",
+      "/src/NodeGoat/artifacts/db-reset.js",
+      "/src/NodeGoat/config/config.js",
+      "/src/NodeGoat/config/env/all.js",
+      "/src/NodeGoat/config/env/development.js",
+      "/src/NodeGoat/config/env/production.js",
+      "/src/NodeGoat/config/env/test.js",
+      "/src/NodeGoat/server.js"
+    ]
+  },
+  "skipped_rules": []
+}

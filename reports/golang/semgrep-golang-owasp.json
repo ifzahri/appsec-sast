@@ -1,0 +1,308 @@
+{
+  "version": "1.121.0",
+  "results": [
+    {
+      "check_id": "typescript.react.security.react-insecure-request.react-insecure-request",
+      "path": "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "start": { "line": 27, "col": 28, "offset": 780 },
+      "end": { "line": 31, "col": 7, "offset": 939 },
+      "extra": {
+        "message": "Unencrypted request over HTTP detected.",
+        "metadata": {
+          "vulnerability": "Insecure Transport",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "cwe": ["CWE-319: Cleartext Transmission of Sensitive Information"],
+          "references": ["https://www.npmjs.com/package/axios"],
+          "category": "security",
+          "technology": ["react"],
+          "subcategory": ["vuln"],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/typescript.react.security.react-insecure-request.react-insecure-request",
+          "shortlink": "https://sg.run/1n0b"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "typescript.react.security.react-insecure-request.react-insecure-request",
+      "path": "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "start": { "line": 36, "col": 28, "offset": 1111 },
+      "end": { "line": 40, "col": 7, "offset": 1264 },
+      "extra": {
+        "message": "Unencrypted request over HTTP detected.",
+        "metadata": {
+          "vulnerability": "Insecure Transport",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "cwe": ["CWE-319: Cleartext Transmission of Sensitive Information"],
+          "references": ["https://www.npmjs.com/package/axios"],
+          "category": "security",
+          "technology": ["react"],
+          "subcategory": ["vuln"],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/typescript.react.security.react-insecure-request.react-insecure-request",
+          "shortlink": "https://sg.run/1n0b"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "typescript.react.security.react-insecure-request.react-insecure-request",
+      "path": "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "start": { "line": 45, "col": 28, "offset": 1383 },
+      "end": { "line": 47, "col": 7, "offset": 1479 },
+      "extra": {
+        "message": "Unencrypted request over HTTP detected.",
+        "metadata": {
+          "vulnerability": "Insecure Transport",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "cwe": ["CWE-319: Cleartext Transmission of Sensitive Information"],
+          "references": ["https://www.npmjs.com/package/axios"],
+          "category": "security",
+          "technology": ["react"],
+          "subcategory": ["vuln"],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/typescript.react.security.react-insecure-request.react-insecure-request",
+          "shortlink": "https://sg.run/1n0b"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "typescript.react.security.react-insecure-request.react-insecure-request",
+      "path": "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "start": { "line": 52, "col": 28, "offset": 1601 },
+      "end": { "line": 54, "col": 7, "offset": 1694 },
+      "extra": {
+        "message": "Unencrypted request over HTTP detected.",
+        "metadata": {
+          "vulnerability": "Insecure Transport",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "cwe": ["CWE-319: Cleartext Transmission of Sensitive Information"],
+          "references": ["https://www.npmjs.com/package/axios"],
+          "category": "security",
+          "technology": ["react"],
+          "subcategory": ["vuln"],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/typescript.react.security.react-insecure-request.react-insecure-request",
+          "shortlink": "https://sg.run/1n0b"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "typescript.react.security.react-insecure-request.react-insecure-request",
+      "path": "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "start": { "line": 59, "col": 28, "offset": 1854 },
+      "end": { "line": 66, "col": 7, "offset": 2067 },
+      "extra": {
+        "message": "Unencrypted request over HTTP detected.",
+        "metadata": {
+          "vulnerability": "Insecure Transport",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "cwe": ["CWE-319: Cleartext Transmission of Sensitive Information"],
+          "references": ["https://www.npmjs.com/package/axios"],
+          "category": "security",
+          "technology": ["react"],
+          "subcategory": ["vuln"],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/typescript.react.security.react-insecure-request.react-insecure-request",
+          "shortlink": "https://sg.run/1n0b"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "/src/go-fp-pbkk/Dockerfile",
+            "start": { "line": 4, "col": 3, "offset": 0 },
+            "end": { "line": 20, "col": 12, "offset": 205 }
+          }
+        ]
+      ],
+      "message": "Syntax error at line /src/go-fp-pbkk/Dockerfile:4:\n `apk add --no-cache bash\r\n\r\nWORKDIR /app\r\n\r\nCOPY go.mod go.sum ./\r\n\r\nRUN go mod download\r\n\r\nCOPY . .\r\n\r\nRUN go build -o main .\r\n\r\nRUN go install github.com/air-verse/air@latest\r\n\r\nEXPOSE 8888\r\n\r\nCMD [\"air\"]` was unexpected",
+      "path": "/src/go-fp-pbkk/Dockerfile",
+      "spans": [
+        {
+          "file": "/src/go-fp-pbkk/Dockerfile",
+          "start": { "line": 4, "col": 3, "offset": 0 },
+          "end": { "line": 20, "col": 12, "offset": 205 }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      "/src/go-fp-pbkk/.air.toml",
+      "/src/go-fp-pbkk/.env.example",
+      "/src/go-fp-pbkk/.github/issue-branch.yml",
+      "/src/go-fp-pbkk/.github/issue_template.md",
+      "/src/go-fp-pbkk/.github/pull_request_template.md",
+      "/src/go-fp-pbkk/.github/workflows/create_branch.yml",
+      "/src/go-fp-pbkk/.github/workflows/go.yml",
+      "/src/go-fp-pbkk/.github/workflows/issue-autolink.yml",
+      "/src/go-fp-pbkk/.gitignore",
+      "/src/go-fp-pbkk/Dockerfile",
+      "/src/go-fp-pbkk/LICENSE",
+      "/src/go-fp-pbkk/Makefile",
+      "/src/go-fp-pbkk/README.md",
+      "/src/go-fp-pbkk/command/command.go",
+      "/src/go-fp-pbkk/config/database.go",
+      "/src/go-fp-pbkk/config/email.go",
+      "/src/go-fp-pbkk/constants/common.go",
+      "/src/go-fp-pbkk/controller/task_controller.go",
+      "/src/go-fp-pbkk/controller/user_controller.go",
+      "/src/go-fp-pbkk/docker-compose.yml",
+      "/src/go-fp-pbkk/dto/pagination.go",
+      "/src/go-fp-pbkk/dto/task_dto.go",
+      "/src/go-fp-pbkk/dto/user_dto.go",
+      "/src/go-fp-pbkk/entity/common.go",
+      "/src/go-fp-pbkk/entity/role_entity.go",
+      "/src/go-fp-pbkk/entity/task_entity.go",
+      "/src/go-fp-pbkk/entity/user_entity.go",
+      "/src/go-fp-pbkk/go.mod",
+      "/src/go-fp-pbkk/go.sum",
+      "/src/go-fp-pbkk/helpers/password.go",
+      "/src/go-fp-pbkk/main.go",
+      "/src/go-fp-pbkk/middleware/allow_role.go",
+      "/src/go-fp-pbkk/middleware/authentication.go",
+      "/src/go-fp-pbkk/middleware/cors.go",
+      "/src/go-fp-pbkk/migrations/database.sql",
+      "/src/go-fp-pbkk/migrations/json/roles.json",
+      "/src/go-fp-pbkk/migrations/json/tasks.json",
+      "/src/go-fp-pbkk/migrations/json/users.json",
+      "/src/go-fp-pbkk/migrations/migrate.go",
+      "/src/go-fp-pbkk/migrations/seeder.go",
+      "/src/go-fp-pbkk/migrations/seeds/role_seed.go",
+      "/src/go-fp-pbkk/migrations/seeds/task_seed.go",
+      "/src/go-fp-pbkk/migrations/seeds/user_seed.go",
+      "/src/go-fp-pbkk/public/.eslintrc.json",
+      "/src/go-fp-pbkk/public/.gitignore",
+      "/src/go-fp-pbkk/public/components.json",
+      "/src/go-fp-pbkk/public/next.config.ts",
+      "/src/go-fp-pbkk/public/package-lock.json",
+      "/src/go-fp-pbkk/public/package.json",
+      "/src/go-fp-pbkk/public/postcss.config.mjs",
+      "/src/go-fp-pbkk/public/public/file.svg",
+      "/src/go-fp-pbkk/public/public/globe.svg",
+      "/src/go-fp-pbkk/public/public/next.svg",
+      "/src/go-fp-pbkk/public/public/vercel.svg",
+      "/src/go-fp-pbkk/public/public/window.svg",
+      "/src/go-fp-pbkk/public/src/app/(auth)/layout.tsx",
+      "/src/go-fp-pbkk/public/src/app/(auth)/login/page.tsx",
+      "/src/go-fp-pbkk/public/src/app/(auth)/register/page.tsx",
+      "/src/go-fp-pbkk/public/src/app/favicon.ico",
+      "/src/go-fp-pbkk/public/src/app/fonts/GeistMonoVF.woff",
+      "/src/go-fp-pbkk/public/src/app/fonts/GeistVF.woff",
+      "/src/go-fp-pbkk/public/src/app/globals.css",
+      "/src/go-fp-pbkk/public/src/app/layout.tsx",
+      "/src/go-fp-pbkk/public/src/app/loading.tsx",
+      "/src/go-fp-pbkk/public/src/app/page.tsx",
+      "/src/go-fp-pbkk/public/src/app/task/page.tsx",
+      "/src/go-fp-pbkk/public/src/components/auth/login-form.tsx",
+      "/src/go-fp-pbkk/public/src/components/auth/register-form.tsx",
+      "/src/go-fp-pbkk/public/src/components/providers.tsx",
+      "/src/go-fp-pbkk/public/src/components/todo-list.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/alert.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/button.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/card.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/form.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/input.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/label.tsx",
+      "/src/go-fp-pbkk/public/src/components/ui/select.tsx",
+      "/src/go-fp-pbkk/public/src/hooks/use-auth.tsx",
+      "/src/go-fp-pbkk/public/src/lib/api.ts",
+      "/src/go-fp-pbkk/public/src/lib/definitions.ts",
+      "/src/go-fp-pbkk/public/src/lib/middleware.ts",
+      "/src/go-fp-pbkk/public/src/lib/schemas.ts",
+      "/src/go-fp-pbkk/public/src/lib/utils.ts",
+      "/src/go-fp-pbkk/public/src/schemas/auth.ts",
+      "/src/go-fp-pbkk/public/src/store/auth.ts",
+      "/src/go-fp-pbkk/public/src/store/task.ts",
+      "/src/go-fp-pbkk/public/src/types/types.ts",
+      "/src/go-fp-pbkk/public/tailwind.config.ts",
+      "/src/go-fp-pbkk/public/tsconfig.json",
+      "/src/go-fp-pbkk/repository/common.go",
+      "/src/go-fp-pbkk/repository/role_repository.go",
+      "/src/go-fp-pbkk/repository/task_repository.go",
+      "/src/go-fp-pbkk/repository/user_repository.go",
+      "/src/go-fp-pbkk/routes/task_route.go",
+      "/src/go-fp-pbkk/routes/user_route.go",
+      "/src/go-fp-pbkk/script/example_script.go",
+      "/src/go-fp-pbkk/script/script.go",
+      "/src/go-fp-pbkk/service/jwt_service.go",
+      "/src/go-fp-pbkk/service/task_service.go",
+      "/src/go-fp-pbkk/service/user_service.go",
+      "/src/go-fp-pbkk/sonar-scanner.properties",
+      "/src/go-fp-pbkk/tmp/build-errors.log",
+      "/src/go-fp-pbkk/utils/aes.go",
+      "/src/go-fp-pbkk/utils/email-template/base_mail.html",
+      "/src/go-fp-pbkk/utils/email.go",
+      "/src/go-fp-pbkk/utils/file.go",
+      "/src/go-fp-pbkk/utils/response.go",
+      "/src/go-fp-pbkk/utils/validation.go"
+    ]
+  },
+  "skipped_rules": []
+}

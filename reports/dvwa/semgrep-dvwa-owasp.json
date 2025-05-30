@@ -1,0 +1,1585 @@
+{
+  "version": "1.121.0",
+  "results": [
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/instructions.php",
+      "start": { "line": 26, "col": 36, "offset": 1038 },
+      "end": { "line": 26, "col": 67, "offset": 1069 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.phpinfo-use.phpinfo-use",
+      "path": "/src/DVWA/phpinfo.php",
+      "start": { "line": 8, "col": 1, "offset": 170 },
+      "end": { "line": 8, "col": 11, "offset": 180 },
+      "extra": {
+        "message": "The 'phpinfo' function may reveal sensitive information about your environment.",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "references": [
+            "https://www.php.net/manual/en/function.phpinfo",
+            "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/PhpinfosSniff.php"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A01:2021 - Broken Access Control"],
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Mishandled Sensitive Information"],
+          "source": "https://semgrep.dev/r/php.lang.security.phpinfo-use.phpinfo-use",
+          "shortlink": "https://sg.run/W82E"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/api/src/HealthController.php",
+      "start": { "line": 88, "col": 4, "offset": 2532 },
+      "end": { "line": 88, "col": 52, "offset": 2580 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/brute/source/low.php",
+      "start": { "line": 12, "col": 12, "offset": 205 },
+      "end": { "line": 12, "col": 80, "offset": 273 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.echoed-request.echoed-request",
+      "path": "/src/DVWA/vulnerabilities/csp/source/jsonp.php",
+      "start": { "line": 12, "col": 1, "offset": 210 },
+      "end": { "line": 12, "col": 45, "offset": 254 },
+      "extra": {
+        "message": "`Echo`ing user input risks cross-site scripting vulnerability. You should use `htmlentities()` when showing data to users.",
+        "fix": "echo htmlentities($callback . \"(\".json_encode($outp).\")\");",
+        "metadata": {
+          "technology": ["php"],
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "category": "security",
+          "references": [
+            "https://www.php.net/manual/en/function.htmlentities.php",
+            "https://www.php.net/manual/en/reserved.variables.request.php",
+            "https://www.php.net/manual/en/reserved.variables.post.php",
+            "https://www.php.net/manual/en/reserved.variables.get.php",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Cross-Site-Scripting (XSS)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.echoed-request.echoed-request",
+          "shortlink": "https://sg.run/Bqqb"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/high.php",
+      "start": { "line": 26, "col": 10, "offset": 555 },
+      "end": { "line": 26, "col": 42, "offset": 587 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/high.php",
+      "start": { "line": 26, "col": 10, "offset": 555 },
+      "end": { "line": 26, "col": 42, "offset": 587 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/high.php",
+      "start": { "line": 30, "col": 10, "offset": 623 },
+      "end": { "line": 30, "col": 47, "offset": 660 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/high.php",
+      "start": { "line": 30, "col": 10, "offset": 623 },
+      "end": { "line": 30, "col": 47, "offset": 660 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/impossible.php",
+      "start": { "line": 22, "col": 11, "offset": 782 },
+      "end": { "line": 22, "col": 43, "offset": 814 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/impossible.php",
+      "start": { "line": 22, "col": 11, "offset": 782 },
+      "end": { "line": 22, "col": 43, "offset": 814 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/impossible.php",
+      "start": { "line": 26, "col": 11, "offset": 854 },
+      "end": { "line": 26, "col": 48, "offset": 891 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/impossible.php",
+      "start": { "line": 26, "col": 11, "offset": 854 },
+      "end": { "line": 26, "col": 48, "offset": 891 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/low.php",
+      "start": { "line": 10, "col": 10, "offset": 218 },
+      "end": { "line": 10, "col": 42, "offset": 250 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/low.php",
+      "start": { "line": 10, "col": 10, "offset": 218 },
+      "end": { "line": 10, "col": 42, "offset": 250 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/low.php",
+      "start": { "line": 14, "col": 10, "offset": 286 },
+      "end": { "line": 14, "col": 47, "offset": 323 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/low.php",
+      "start": { "line": 14, "col": 10, "offset": 286 },
+      "end": { "line": 14, "col": 47, "offset": 323 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/medium.php",
+      "start": { "line": 19, "col": 10, "offset": 444 },
+      "end": { "line": 19, "col": 42, "offset": 476 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/medium.php",
+      "start": { "line": 19, "col": 10, "offset": 444 },
+      "end": { "line": 19, "col": 42, "offset": 476 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/medium.php",
+      "start": { "line": 23, "col": 10, "offset": 512 },
+      "end": { "line": 23, "col": 47, "offset": 549 },
+      "extra": {
+        "message": "User input is passed to a function that executes a shell command. This can lead to remote code execution.",
+        "metadata": {
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+          "subcategory": ["vuln"],
+          "impact": "HIGH",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Command Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/kxEEz"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.tainted-exec.tainted-exec",
+      "path": "/src/DVWA/vulnerabilities/exec/source/medium.php",
+      "start": { "line": 23, "col": 10, "offset": 512 },
+      "end": { "line": 23, "col": 47, "offset": 549 },
+      "extra": {
+        "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "references": [
+            "https://www.stackhawk.com/blog/php-command-injection/",
+            "https://brightsec.com/blog/code-injection-php/",
+            "https://www.acunetix.com/websitesecurity/php-security-2/"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "owasp": ["A03:2021 - Injection"],
+          "cwe2022-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Code Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.tainted-exec.tainted-exec",
+          "shortlink": "https://sg.run/JAkP"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/fi/source/high.php",
+      "start": { "line": 7, "col": 24, "offset": 113 },
+      "end": { "line": 7, "col": 29, "offset": 118 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli/source/low.php",
+      "start": { "line": 10, "col": 14, "offset": 174 },
+      "end": { "line": 10, "col": 78, "offset": 238 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli/source/low.php",
+      "start": { "line": 31, "col": 14, "offset": 1018 },
+      "end": { "line": 31, "col": 78, "offset": 1082 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli_blind/source/high.php",
+      "start": { "line": 11, "col": 14, "offset": 187 },
+      "end": { "line": 11, "col": 86, "offset": 259 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli_blind/source/high.php",
+      "start": { "line": 33, "col": 14, "offset": 857 },
+      "end": { "line": 33, "col": 86, "offset": 929 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli_blind/source/low.php",
+      "start": { "line": 11, "col": 14, "offset": 185 },
+      "end": { "line": 11, "col": 78, "offset": 249 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli_blind/source/low.php",
+      "start": { "line": 32, "col": 14, "offset": 809 },
+      "end": { "line": 32, "col": 78, "offset": 873 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "path": "/src/DVWA/vulnerabilities/sqli_blind/source/medium.php",
+      "start": { "line": 34, "col": 14, "offset": 1039 },
+      "end": { "line": 34, "col": 76, "offset": 1101 },
+      "extra": {
+        "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "category": "security",
+          "technology": ["php"],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["SQL Injection"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/lZYG"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_help.php",
+      "start": { "line": 20, "col": 35, "offset": 569 },
+      "end": { "line": 20, "col": 96, "offset": 630 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_help.php",
+      "start": { "line": 22, "col": 35, "offset": 693 },
+      "end": { "line": 22, "col": 106, "offset": 764 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source.php",
+      "start": { "line": 60, "col": 32, "offset": 1314 },
+      "end": { "line": 60, "col": 102, "offset": 1384 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source.php",
+      "start": { "line": 64, "col": 19, "offset": 1500 },
+      "end": { "line": 64, "col": 88, "offset": 1569 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source.php",
+      "start": { "line": 65, "col": 36, "offset": 1610 },
+      "end": { "line": 65, "col": 105, "offset": 1679 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source_all.php",
+      "start": { "line": 14, "col": 31, "offset": 374 },
+      "end": { "line": 14, "col": 55, "offset": 398 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source_all.php",
+      "start": { "line": 18, "col": 31, "offset": 554 },
+      "end": { "line": 18, "col": 58, "offset": 581 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source_all.php",
+      "start": { "line": 22, "col": 32, "offset": 738 },
+      "end": { "line": 22, "col": 57, "offset": 763 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "path": "/src/DVWA/vulnerabilities/view_source_all.php",
+      "start": { "line": 26, "col": 31, "offset": 923 },
+      "end": { "line": 26, "col": 62, "offset": 954 },
+      "extra": {
+        "message": "File name based on user input risks server-side request forgery.",
+        "metadata": {
+          "technology": ["php"],
+          "category": "security",
+          "cwe": ["CWE-918: Server-Side Request Forgery (SSRF)"],
+          "owasp": ["A10:2021 - Server-Side Request Forgery (SSRF)"],
+          "references": [
+            "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": ["vuln"],
+          "impact": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": ["Server-Side Request Forgery (SSRF)"],
+          "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-filename.tainted-filename",
+          "shortlink": "https://sg.run/Ayqp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "/src/DVWA/docs/pdf.html",
+            "start": { "line": 1, "col": 1, "offset": 0 },
+            "end": { "line": 1, "col": 39, "offset": 38 }
+          }
+        ]
+      ],
+      "message": "Syntax error at line /src/DVWA/docs/pdf.html:1:\n `Damn Vulnerable Web Application (DVWA)` was unexpected",
+      "path": "/src/DVWA/docs/pdf.html",
+      "spans": [
+        {
+          "file": "/src/DVWA/docs/pdf.html",
+          "start": { "line": 1, "col": 1, "offset": 0 },
+          "end": { "line": 1, "col": 39, "offset": 38 }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "/src/DVWA/Dockerfile",
+            "start": { "line": 11, "col": 2, "offset": 0 },
+            "end": { "line": 25, "col": 23, "offset": 700 }
+          }
+        ]
+      ],
+      "message": "Syntax error at line /src/DVWA/Dockerfile:11:\n `&& export DEBIAN_FRONTEND=noninteractive \\\r\n && apt-get install -y zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev iputils-ping git \\\r\n && apt-get clean -y && rm -rf /var/lib/apt/lists/* \\\r\n && docker-php-ext-configure gd --with-jpeg --with-freetype \\\r\n && a2enmod rewrite \\\r\n # Use pdo_sqlite instead of pdo_mysql if you want to use sqlite\r\n && docker-php-ext-install gd mysqli pdo pdo_mysql\r\n\r\nCOPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer\r\nCOPY --chown=www-data:www-data . .\r\nCOPY --chown=www-data:www-data config/config.inc.php.dist config/config.inc.php\r\n\r\n# This is configuring the stuff for the API\r\nRUN cd /var/www/html/vulnerabilities/api \\\r\n && composer install \\` was unexpected",
+      "path": "/src/DVWA/Dockerfile",
+      "spans": [
+        {
+          "file": "/src/DVWA/Dockerfile",
+          "start": { "line": 11, "col": 2, "offset": 0 },
+          "end": { "line": 25, "col": 23, "offset": 700 }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      "/src/DVWA/.dockerignore",
+      "/src/DVWA/.gitattributes",
+      "/src/DVWA/.github/FUNDING.yml",
+      "/src/DVWA/.github/ISSUE_TEMPLATE/bug-report---installation.md",
+      "/src/DVWA/.github/ISSUE_TEMPLATE/bug-report---vulnerability.md",
+      "/src/DVWA/.github/ISSUE_TEMPLATE/i-m-stuck.md",
+      "/src/DVWA/.github/workflows/codeql-analysis.yml",
+      "/src/DVWA/.github/workflows/docker-image.yml",
+      "/src/DVWA/.github/workflows/pytest.yml",
+      "/src/DVWA/.github/workflows/shiftleft-analysis.yml",
+      "/src/DVWA/.github/workflows/vulnerable.yml",
+      "/src/DVWA/.gitignore",
+      "/src/DVWA/CHANGELOG.md",
+      "/src/DVWA/COPYING.txt",
+      "/src/DVWA/Dockerfile",
+      "/src/DVWA/README.ar.md",
+      "/src/DVWA/README.es.md",
+      "/src/DVWA/README.fa.md",
+      "/src/DVWA/README.fr.md",
+      "/src/DVWA/README.id.md",
+      "/src/DVWA/README.ko.md",
+      "/src/DVWA/README.md",
+      "/src/DVWA/README.pl.md",
+      "/src/DVWA/README.pt.md",
+      "/src/DVWA/README.tr.md",
+      "/src/DVWA/README.vi.md",
+      "/src/DVWA/README.zh.md",
+      "/src/DVWA/SECURITY.md",
+      "/src/DVWA/about.php",
+      "/src/DVWA/compose.yml",
+      "/src/DVWA/config/config.inc.php.dist",
+      "/src/DVWA/database/create_mssql_db.sql",
+      "/src/DVWA/database/create_oracle_db.sql",
+      "/src/DVWA/database/create_postgresql_db.sql",
+      "/src/DVWA/database/create_sqlite_db.sql",
+      "/src/DVWA/database/sqli.db",
+      "/src/DVWA/database/sqli.db.dist",
+      "/src/DVWA/docs/DVWA_v1.3.pdf",
+      "/src/DVWA/docs/graphics/docker/detail.png",
+      "/src/DVWA/docs/graphics/docker/overview.png",
+      "/src/DVWA/docs/pdf.html",
+      "/src/DVWA/dvwa/css/help.css",
+      "/src/DVWA/dvwa/css/login.css",
+      "/src/DVWA/dvwa/css/main.css",
+      "/src/DVWA/dvwa/css/source.css",
+      "/src/DVWA/dvwa/images/dollar.png",
+      "/src/DVWA/dvwa/images/lock.png",
+      "/src/DVWA/dvwa/images/login_logo.png",
+      "/src/DVWA/dvwa/images/logo.png",
+      "/src/DVWA/dvwa/images/spanner.png",
+      "/src/DVWA/dvwa/images/theme-light-dark.png",
+      "/src/DVWA/dvwa/images/warning.png",
+      "/src/DVWA/dvwa/includes/DBMS/MySQL.php",
+      "/src/DVWA/dvwa/includes/DBMS/PGSQL.php",
+      "/src/DVWA/dvwa/includes/Parsedown.php",
+      "/src/DVWA/dvwa/includes/dvwaPage.inc.php",
+      "/src/DVWA/dvwa/js/add_event_listeners.js",
+      "/src/DVWA/dvwa/js/dvwaPage.js",
+      "/src/DVWA/external/recaptcha/recaptchalib.php",
+      "/src/DVWA/favicon.ico",
+      "/src/DVWA/hackable/flags/fi.php",
+      "/src/DVWA/hackable/uploads/dvwa_email.png",
+      "/src/DVWA/hackable/users/1337.jpg",
+      "/src/DVWA/hackable/users/admin.jpg",
+      "/src/DVWA/hackable/users/gordonb.jpg",
+      "/src/DVWA/hackable/users/pablo.jpg",
+      "/src/DVWA/hackable/users/smithy.jpg",
+      "/src/DVWA/index.php",
+      "/src/DVWA/instructions.php",
+      "/src/DVWA/login.php",
+      "/src/DVWA/logout.php",
+      "/src/DVWA/php.ini",
+      "/src/DVWA/phpinfo.php",
+      "/src/DVWA/robots.txt",
+      "/src/DVWA/security.php",
+      "/src/DVWA/security.txt",
+      "/src/DVWA/setup.php",
+      "/src/DVWA/sonar-scanner.properties",
+      "/src/DVWA/vulnerabilities/api/.gitignore",
+      "/src/DVWA/vulnerabilities/api/.htaccess",
+      "/src/DVWA/vulnerabilities/api/README.md",
+      "/src/DVWA/vulnerabilities/api/bootstrap.php",
+      "/src/DVWA/vulnerabilities/api/composer.json",
+      "/src/DVWA/vulnerabilities/api/composer.lock",
+      "/src/DVWA/vulnerabilities/api/gen_openapi.php",
+      "/src/DVWA/vulnerabilities/api/help/help.php",
+      "/src/DVWA/vulnerabilities/api/index.php",
+      "/src/DVWA/vulnerabilities/api/openapi.yml",
+      "/src/DVWA/vulnerabilities/api/public/index.php",
+      "/src/DVWA/vulnerabilities/api/source/high.php",
+      "/src/DVWA/vulnerabilities/api/source/impossible.php",
+      "/src/DVWA/vulnerabilities/api/source/low.php",
+      "/src/DVWA/vulnerabilities/api/source/medium.php",
+      "/src/DVWA/vulnerabilities/api/src/GenericController.php",
+      "/src/DVWA/vulnerabilities/api/src/HealthController.php",
+      "/src/DVWA/vulnerabilities/api/src/Helpers.php",
+      "/src/DVWA/vulnerabilities/api/src/Login.php",
+      "/src/DVWA/vulnerabilities/api/src/LoginController.php",
+      "/src/DVWA/vulnerabilities/api/src/Order.php",
+      "/src/DVWA/vulnerabilities/api/src/OrderController.php",
+      "/src/DVWA/vulnerabilities/api/src/Token.php",
+      "/src/DVWA/vulnerabilities/api/src/User.php",
+      "/src/DVWA/vulnerabilities/api/src/UserController.php",
+      "/src/DVWA/vulnerabilities/authbypass/authbypass.js",
+      "/src/DVWA/vulnerabilities/authbypass/change_user_details.php",
+      "/src/DVWA/vulnerabilities/authbypass/get_user_data.php",
+      "/src/DVWA/vulnerabilities/authbypass/help/help.php",
+      "/src/DVWA/vulnerabilities/authbypass/index.php",
+      "/src/DVWA/vulnerabilities/authbypass/source/high.php",
+      "/src/DVWA/vulnerabilities/authbypass/source/impossible.php",
+      "/src/DVWA/vulnerabilities/authbypass/source/low.php",
+      "/src/DVWA/vulnerabilities/authbypass/source/medium.php",
+      "/src/DVWA/vulnerabilities/brute/help/help.php",
+      "/src/DVWA/vulnerabilities/brute/index.php",
+      "/src/DVWA/vulnerabilities/brute/source/high.php",
+      "/src/DVWA/vulnerabilities/brute/source/impossible.php",
+      "/src/DVWA/vulnerabilities/brute/source/low.php",
+      "/src/DVWA/vulnerabilities/brute/source/medium.php",
+      "/src/DVWA/vulnerabilities/captcha/help/help.php",
+      "/src/DVWA/vulnerabilities/captcha/index.php",
+      "/src/DVWA/vulnerabilities/captcha/source/high.php",
+      "/src/DVWA/vulnerabilities/captcha/source/impossible.php",
+      "/src/DVWA/vulnerabilities/captcha/source/low.php",
+      "/src/DVWA/vulnerabilities/captcha/source/medium.php",
+      "/src/DVWA/vulnerabilities/cryptography/help/help.php",
+      "/src/DVWA/vulnerabilities/cryptography/index.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/check_token_high.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/check_token_impossible.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/download_ecb_attack.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/download_oracle_attack.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/ecb_attack.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/high.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/impossible.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/low.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/medium.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/oracle_attack.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/token_library_high.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/token_library_impossible.php",
+      "/src/DVWA/vulnerabilities/cryptography/source/xor_theory.php",
+      "/src/DVWA/vulnerabilities/csp/help/help.php",
+      "/src/DVWA/vulnerabilities/csp/index.php",
+      "/src/DVWA/vulnerabilities/csp/source/high.js",
+      "/src/DVWA/vulnerabilities/csp/source/high.php",
+      "/src/DVWA/vulnerabilities/csp/source/impossible.js",
+      "/src/DVWA/vulnerabilities/csp/source/impossible.php",
+      "/src/DVWA/vulnerabilities/csp/source/jsonp.php",
+      "/src/DVWA/vulnerabilities/csp/source/jsonp_impossible.php",
+      "/src/DVWA/vulnerabilities/csp/source/low.php",
+      "/src/DVWA/vulnerabilities/csp/source/medium.php",
+      "/src/DVWA/vulnerabilities/csrf/help/help.php",
+      "/src/DVWA/vulnerabilities/csrf/index.php",
+      "/src/DVWA/vulnerabilities/csrf/source/high.php",
+      "/src/DVWA/vulnerabilities/csrf/source/impossible.php",
+      "/src/DVWA/vulnerabilities/csrf/source/low.php",
+      "/src/DVWA/vulnerabilities/csrf/source/medium.php",
+      "/src/DVWA/vulnerabilities/csrf/test_credentials.php",
+      "/src/DVWA/vulnerabilities/exec/help/help.php",
+      "/src/DVWA/vulnerabilities/exec/index.php",
+      "/src/DVWA/vulnerabilities/exec/source/high.php",
+      "/src/DVWA/vulnerabilities/exec/source/impossible.php",
+      "/src/DVWA/vulnerabilities/exec/source/low.php",
+      "/src/DVWA/vulnerabilities/exec/source/medium.php",
+      "/src/DVWA/vulnerabilities/fi/file1.php",
+      "/src/DVWA/vulnerabilities/fi/file2.php",
+      "/src/DVWA/vulnerabilities/fi/file3.php",
+      "/src/DVWA/vulnerabilities/fi/file4.php",
+      "/src/DVWA/vulnerabilities/fi/help/help.php",
+      "/src/DVWA/vulnerabilities/fi/include.php",
+      "/src/DVWA/vulnerabilities/fi/index.php",
+      "/src/DVWA/vulnerabilities/fi/source/high.php",
+      "/src/DVWA/vulnerabilities/fi/source/impossible.php",
+      "/src/DVWA/vulnerabilities/fi/source/low.php",
+      "/src/DVWA/vulnerabilities/fi/source/medium.php",
+      "/src/DVWA/vulnerabilities/help.css",
+      "/src/DVWA/vulnerabilities/help.js",
+      "/src/DVWA/vulnerabilities/javascript/help/help.php",
+      "/src/DVWA/vulnerabilities/javascript/index.php",
+      "/src/DVWA/vulnerabilities/javascript/source/high.js",
+      "/src/DVWA/vulnerabilities/javascript/source/high.php",
+      "/src/DVWA/vulnerabilities/javascript/source/high_unobfuscated.js",
+      "/src/DVWA/vulnerabilities/javascript/source/impossible.php",
+      "/src/DVWA/vulnerabilities/javascript/source/low.php",
+      "/src/DVWA/vulnerabilities/javascript/source/medium.js",
+      "/src/DVWA/vulnerabilities/javascript/source/medium.php",
+      "/src/DVWA/vulnerabilities/open_redirect/help/help.php",
+      "/src/DVWA/vulnerabilities/open_redirect/index.php",
+      "/src/DVWA/vulnerabilities/open_redirect/source/high.php",
+      "/src/DVWA/vulnerabilities/open_redirect/source/impossible.php",
+      "/src/DVWA/vulnerabilities/open_redirect/source/info.php",
+      "/src/DVWA/vulnerabilities/open_redirect/source/low.php",
+      "/src/DVWA/vulnerabilities/open_redirect/source/medium.php",
+      "/src/DVWA/vulnerabilities/sqli/help/help.php",
+      "/src/DVWA/vulnerabilities/sqli/index.php",
+      "/src/DVWA/vulnerabilities/sqli/session-input.php",
+      "/src/DVWA/vulnerabilities/sqli/source/high.php",
+      "/src/DVWA/vulnerabilities/sqli/source/impossible.php",
+      "/src/DVWA/vulnerabilities/sqli/source/low.php",
+      "/src/DVWA/vulnerabilities/sqli/source/medium.php",
+      "/src/DVWA/vulnerabilities/sqli/test.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/cookie-input.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/help/help.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/index.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/source/high.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/source/impossible.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/source/low.php",
+      "/src/DVWA/vulnerabilities/sqli_blind/source/medium.php",
+      "/src/DVWA/vulnerabilities/upload/help/help.php",
+      "/src/DVWA/vulnerabilities/upload/index.php",
+      "/src/DVWA/vulnerabilities/upload/source/high.php",
+      "/src/DVWA/vulnerabilities/upload/source/impossible.php",
+      "/src/DVWA/vulnerabilities/upload/source/low.php",
+      "/src/DVWA/vulnerabilities/upload/source/medium.php",
+      "/src/DVWA/vulnerabilities/view_help.php",
+      "/src/DVWA/vulnerabilities/view_source.php",
+      "/src/DVWA/vulnerabilities/view_source_all.php",
+      "/src/DVWA/vulnerabilities/weak_id/help/help.php",
+      "/src/DVWA/vulnerabilities/weak_id/index.php",
+      "/src/DVWA/vulnerabilities/weak_id/source/high.php",
+      "/src/DVWA/vulnerabilities/weak_id/source/impossible.php",
+      "/src/DVWA/vulnerabilities/weak_id/source/low.php",
+      "/src/DVWA/vulnerabilities/weak_id/source/medium.php",
+      "/src/DVWA/vulnerabilities/xss_d/help/help.php",
+      "/src/DVWA/vulnerabilities/xss_d/index.php",
+      "/src/DVWA/vulnerabilities/xss_d/source/high.php",
+      "/src/DVWA/vulnerabilities/xss_d/source/impossible.php",
+      "/src/DVWA/vulnerabilities/xss_d/source/low.php",
+      "/src/DVWA/vulnerabilities/xss_d/source/medium.php",
+      "/src/DVWA/vulnerabilities/xss_r/help/help.php",
+      "/src/DVWA/vulnerabilities/xss_r/index.php",
+      "/src/DVWA/vulnerabilities/xss_r/source/high.php",
+      "/src/DVWA/vulnerabilities/xss_r/source/impossible.php",
+      "/src/DVWA/vulnerabilities/xss_r/source/low.php",
+      "/src/DVWA/vulnerabilities/xss_r/source/medium.php",
+      "/src/DVWA/vulnerabilities/xss_s/help/help.php",
+      "/src/DVWA/vulnerabilities/xss_s/index.php",
+      "/src/DVWA/vulnerabilities/xss_s/source/high.php",
+      "/src/DVWA/vulnerabilities/xss_s/source/impossible.php",
+      "/src/DVWA/vulnerabilities/xss_s/source/low.php",
+      "/src/DVWA/vulnerabilities/xss_s/source/medium.php"
+    ]
+  },
+  "skipped_rules": []
+}
