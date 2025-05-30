@@ -120,3 +120,6 @@ docker exec semgrep-scanner semgrep --config=auto /src --csv --output=/reports/s
 # SonarQube API for programmatic access
 curl -u admin:admin "http://localhost:9000/api/issues/search?componentKeys=dvwa-analysis"
 ```
+
+## Results
+![dashboard](assets/image.png)
